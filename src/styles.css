@@ -1,6 +1,5 @@
 body {
   font-family: "Press Start 2P", cursive;
-  font-size: 10px;
 }
 
 h1 {
@@ -45,6 +44,10 @@ a {
 }
 .overview {
   margin-bottom: 20px;
+}
+
+.form-control {
+  font-size: 12px;
 }
 .weather-temperature img {
   margin-right: 20px;
