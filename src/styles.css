@@ -2,8 +2,19 @@ body {
   font-family: "Press Start 2P", cursive;
 }
 
+.background-image {
+  background-image: url("../images/town6.jpg");
+  color: black;
+  background-color: #4b0c50;
+  width: auto;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 h1 {
-  color: rgb(135, 135, 135);
+  color: black;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -18,7 +29,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: rgb(135, 135, 135);
+  color: black;
   font-size: 10px;
   font-weight: 100;
   line-height: 19px;
@@ -34,13 +45,21 @@ a {
 
 .weather-app-wrapper {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding-top: 50px;
+  top: 50%;
+  left: 50%;
 }
 
 .weather-app {
   padding: 20px;
   border: 1px solid;
   border-radius: 2px;
+  background: linear-gradient(
+    181deg,
+    rgba(218, 208, 211, 0.8) 22%,
+    rgba(136, 135, 136, 0.8) 100%
+  );
 }
 .overview {
   margin-bottom: 20px;
