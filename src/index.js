@@ -66,7 +66,7 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-search("New York");
+search("Rio de Janeiro");
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
