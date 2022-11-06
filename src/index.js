@@ -72,6 +72,68 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
+  let description = [
+    "clear-sky-day",
+    "clear-sky-night",
+    "few-clouds-day",
+    "few-clouds-night",
+    "scattered-clouds-day",
+    "scattered-clouds-night",
+    "broken-clouds-day",
+    "broken-clouds-night",
+    "shower-rain-day",
+    "shower-rain-night",
+    "rain-day",
+    "rain-night",
+    "thunderstorm-day",
+    "thunderstorm-night",
+    "snow-day",
+    "snow-night",
+    "mist-day",
+    "mist-night",
+  ];
+
+  let clearSkyDay = description[0];
+  clearSkyDay = `Take sunglasses with you`;
+  let clearSkyNight = description[1];
+  clearSkyNight = `It will be a starry night`;
+  let fewCloudsDay = description[2];
+  fewCloudsDay = `Beautiful sunsets need cloudy skies`;
+  let fewCloudsNight = description[3];
+  fewCloudsNight = `It might be a starry night`;
+  let scatteredCloudsDay = description[4];
+  scatteredCloudsDay = `Beautiful sunsets need cloudy skies`;
+  let scatteredCloudsNight = description[5];
+  scatteredCloudsNight = `Dance with the clouds`;
+  let brokenCloudsDay = description[6];
+  brokenCloudsDay = `The sun always shines above the clouds`;
+  let brokenCloudsNight = description[7];
+  brokenCloudsNight = `Clouds make a painting of the sky`;
+  let showerRainDay = description[8];
+  showerRainDay = `Don't forget your umbrella`;
+  let showerRainNight = description[9];
+  showerRainNight = `Don't forget your umbrella`;
+  let rainDay = description[10];
+  rainDay = `Don't forget your umbrella`;
+  let rainNight = description[11];
+  rainNight = `Don't forget your umbrella`;
+  let thunderstormDay = description[12];
+  thunderstormDay = `The sun always shines after the storm`;
+  let thunderstormNight = description[13];
+  thunderstormNight = `The sun always shines after the storm`;
+  let snowDay = description[14];
+  snowDay = `Time to make snow angels if you can`;
+  let snowNight = description[15];
+  snowNight = `Happiness is catching snowflakes on your tongue`;
+  let mistDay = description[16];
+  mistDay = `Beyond the fog lies clarity`;
+  let mistNight = description[17];
+  mistNight = `Beyond the fog lies clarity`;
+
+  console.log(mistNight);
+
+  console.log(response.data.condition.icon);
+
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -91,12 +153,9 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", `images/${response.data.condition.icon}.png`);
   iconElement.setAttribute("alt", `images/${response.data.condition.icon}.png`);
-  quoteElement.innerHTML = response.data.condition.description;
-
+  quoteElement.innerHTML = clearSkyDay;
 
   getForecast(response.data.coordinates);
-
-  console.log(response.data.condition.description);
 }
 
 function search(city) {

@@ -89,6 +89,11 @@ a {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+#quote {
+  margin: 20px 0;
+  font-size: 12px;
+    color: #8f3875;
+}
 
 .weather-forecast {
   margin-top: 20px;
