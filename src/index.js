@@ -72,6 +72,25 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.temperature.current;
+
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
+  iconElement.setAttribute("src", `images/${response.data.condition.icon}.png`);
+  iconElement.setAttribute("alt", `images/${response.data.condition.icon}.png`);
+
   let description = [
     "clear-sky-day",
     "clear-sky-night",
@@ -130,30 +149,11 @@ function displayTemperature(response) {
   let mistNight = description[17];
   mistNight = `Beyond the fog lies clarity`;
 
-  console.log(mistNight);
-
-  console.log(response.data.condition.icon);
-
-  let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
-  let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector("#icon");
   let quoteElement = document.querySelector("#quote");
-
-  celsiusTemperature = response.data.temperature.current;
-
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
-  cityElement.innerHTML = response.data.city;
-  descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = response.data.temperature.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.time * 1000);
-  iconElement.setAttribute("src", `images/${response.data.condition.icon}.png`);
-  iconElement.setAttribute("alt", `images/${response.data.condition.icon}.png`);
   quoteElement.innerHTML = clearSkyDay;
+
+  console.log(mistNight);
+  console.log(response.data.condition.icon);
 
   getForecast(response.data.coordinates);
 }
