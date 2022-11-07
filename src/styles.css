@@ -93,11 +93,11 @@ a {
 #quote {
   margin: 20px 0;
   font-size: 12px;
-   color: #a73083;
+  color: #a73083;
 }
 
 .weather-forecast {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
 }
 
